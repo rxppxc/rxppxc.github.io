@@ -319,8 +319,25 @@ section.block{padding:7rem 0;position:relative}
 .m-map::before{content:"";position:absolute;inset:18% 28% 20% 22%;background:var(--accent);opacity:.25;clip-path:polygon(20% 0,80% 12%,100% 55%,72% 100%,18% 86%,0 38%)}
 .m-map::after{content:"";position:absolute;left:48%;top:42%;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
 
-/* Imagen real opcional: si pones <img class="shot"> reemplaza al mockup */
-.preview .shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center}
+/* Browser frame para screenshots reales */
+.browser-frame{
+  position:absolute;inset:12px;border-radius:10px;overflow:hidden;
+  border:1px solid var(--line-strong);
+  box-shadow:0 16px 40px -16px rgba(0,0,0,.6);
+  display:flex;flex-direction:column;
+}
+.browser-bar{
+  height:24px;min-height:24px;background:var(--surface-2);
+  border-bottom:1px solid var(--line);
+  display:flex;align-items:center;padding:0 10px;gap:6px;flex-shrink:0;
+}
+.browser-bar span{width:8px;height:8px;border-radius:50%;background:var(--faint);opacity:.5}
+.browser-url-bar{margin-left:8px;height:9px;flex:1;border-radius:4px;background:var(--bg);max-width:55%}
+.browser-frame .shot{
+  position:static!important;inset:auto!important;
+  width:100%!important;flex:1;min-height:0;
+  object-fit:cover;object-position:top center;display:block;
+}
 .preview:has(.shot) .mock{display:none}
 
 .card-body{padding:1.6rem;display:flex;flex-direction:column;flex:1}
