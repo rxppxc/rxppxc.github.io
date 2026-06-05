@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Víctor A. Pérez M. — Desarrollador Full-Stack</title>
+<meta name="description" content="Portafolio de Víctor A. Pérez M., desarrollador full-stack (Laravel · Vue · MySQL) y administrador de sistemas e infraestructura. Sistemas institucionales en producción.">
+
+<!-- Fuentes: Bricolage Grotesque (display) · Hanken Grotesk (texto) · JetBrains Mono (técnico) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<!-- ================= NAV ================= -->
+<header id="header">
+  <div class="wrap">
+    <nav>
+      <a href="#top" class="logo"><span class="dot"></span>Víctor<span>.dev</span></a>
+      <div class="nav-links">
+        <a href="#proyectos">Proyectos</a>
+        <a href="#stack">Stack</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="nav-right">
+        <button class="icon-btn" id="theme" aria-label="Cambiar tema">
+          <svg id="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="#contacto" class="btn btn-primary">Contáctame
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+        <button class="icon-btn menu-btn" id="menuOpen" aria-label="Abrir menú">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="icon-btn close" id="menuClose" aria-label="Cerrar menú">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="#proyectos" class="mm-link">Proyectos</a>
+  <a href="#stack" class="mm-link">Stack</a>
+  <a href="#sobre-mi" class="mm-link">Sobre mí</a>
+  <a href="#contacto" class="mm-link">Contacto</a>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="status reveal"><span class="pulse"></span> Disponible para nuevos proyectos</div>
+        <h1 class="reveal d1">Víctor A.<br>Pérez M.<span class="grad">_</span></h1>
+        <div class="role reveal d2" id="role"><span class="cursor"></span></div>
+        <p class="lede reveal d3">Diseño y construyo aplicaciones web de extremo a extremo: del modelo de base de datos a la interfaz de usuario. Me especializo en sistemas robustos y código limpio, con experiencia real en producción y un perfil en crecimiento hacia infraestructura y DevOps.</p>
+        <div class="hero-cta reveal d4">
+          <a href="#proyectos" class="btn btn-primary">Ver proyectos
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="assets/img/CV_Victor_Perez.pdf" download class="btn btn-ghost">Descargar CV
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </a>
+        </div>
+        <div class="hero-meta reveal d4">
+          <div class="m">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Ciudad de Panamá, Panamá
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal d3">
+        <div class="terminal">
+          <div class="term-bar">
+            <span class="tdot"></span><span class="tdot"></span><span class="tdot"></span>
+            <span class="tname">~/victor — perfil.json</span>
+          </div>
+          <div class="term-body">
+            <div class="ln"><span class="c">// stack principal</span></div>
+            <div class="ln"><span class="k">const</span> <span class="s">dev</span> = {</div>
+            <div class="ln">&nbsp;&nbsp;rol: <span class="s">"Full-Stack Developer"</span>,</div>
+            <div class="ln">&nbsp;&nbsp;backend: [<span class="s">"PHP"</span>, <span class="s">"Laravel"</span>],</div>
+            <div class="ln">&nbsp;&nbsp;frontend: [<span class="s">"Vue 3"</span>, <span class="s">"JS"</span>, <span class="s">"Bootstrap"</span>],</div>
+            <div class="ln">&nbsp;&nbsp;data: [<span class="s">"MySQL"</span>, <span class="s">"PostgreSQL"</span>],</div>
+            <div class="ln">&nbsp;&nbsp;infra: [<span class="s">"VMware"</span>, <span class="s">"Linux"</span>, <span class="s">"AD"</span>],</div>
+            <div class="ln">&nbsp;&nbsp;enfoque: <span class="s">"código limpio + escalable"</span></div>
+            <div class="ln">};</div>
+            <div class="ln" style="margin-top:.6rem"><span class="prompt">›</span> <span class="c">deploy ➜ producción ✓</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="marquee-item">Laravel</span><span class="marquee-item">PHP</span><span class="marquee-item">Vue 3</span><span class="marquee-item">MySQL</span><span class="marquee-item">JavaScript</span><span class="marquee-item">Ionic</span><span class="marquee-item">Bootstrap</span><span class="marquee-item">Highcharts</span><span class="marquee-item">Active Directory</span><span class="marquee-item">Git</span>
+    <span class="marquee-item">Laravel</span><span class="marquee-item">PHP</span><span class="marquee-item">Vue 3</span><span class="marquee-item">MySQL</span><span class="marquee-item">JavaScript</span><span class="marquee-item">Ionic</span><span class="marquee-item">Bootstrap</span><span class="marquee-item">Highcharts</span><span class="marquee-item">Active Directory</span><span class="marquee-item">Git</span>
+  </div>
+</div>
+
+<!-- ================= STATS ================= -->
+<section class="block" id="stats">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat reveal"><div class="num" data-count="10">0</div><div class="lbl">Proyectos en este portafolio</div></div>
+      <div class="stat reveal d1"><div class="num" data-count="10" data-suffix="+">0</div><div class="lbl">Módulos desarrollados en producción</div></div>
+      <div class="stat reveal d2"><div class="num" data-count="10210">0</div><div class="lbl">Registros analizados</div></div>
+      <div class="stat reveal d3"><div class="num" data-count="20" data-suffix="+">0</div><div class="lbl">Sistemas integrados</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROYECTOS ================= -->
+<section class="block" id="proyectos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Trabajo seleccionado</span>
+      <h2 class="section-title">Proyectos</h2>
+      <p>Sistemas reales diseñados, construidos y desplegados en producción. La experiencia profesional actual abarca el desarrollo del ecosistema <strong>APOLO</strong> y el Portal Interno del Servicio Nacional de Migración de Panamá.</p>
+    </div>
+
+    <div class="filters reveal d1">
+      <button class="filter active" data-filter="all">Todos</button>
+      <button class="filter" data-filter="web">Web & Portales</button>
+      <button class="filter" data-filter="data">Dashboards & Analítica</button>
+      <button class="filter" data-filter="modulo">Módulos de Sistema</button>
+      <button class="filter" data-filter="auth">Seguridad & Accesos</button>
+    </div>
+
+    <div class="block-divider reveal d2">
+      <span class="eyebrow">Experiencia profesional</span>
+      <p class="block-divider-note">Sistemas desarrollados durante mi trayectoria en el <strong>Servicio Nacional de Migración de Panamá</strong> · Dirección de Tecnología e Innovación (DTI)</p>
+    </div>
+
+    <div class="projects" id="grid">
+
+      <!-- 1. Portal Interno -->
+      <article class="card reveal" data-cat="web">
+        <div class="preview">
+          <img class="shot" src="assets/img/portal.PNG" alt="Portal Interno SNM">
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Aplicación Web · Intranet</span>
+          <h3>Portal Interno SNM</h3>
+          <p>Punto centralizado de acceso a más de 20 aplicaciones institucionales: buscador filtrable, correo directo, contador de visitas en tiempo real y alertas de seguridad emergentes (campaña Anti-Phishing "Plan Firmeza").</p>
+          <div class="metrics">
+            <div class="metric"><div class="v">20+</div><div class="k">apps integradas</div></div>
+            <div class="metric"><div class="v">4,985</div><div class="k">visitas acumuladas</div></div>
+          </div>
+          <div class="tags"><span>Laravel</span><span>Bootstrap</span><span>MySQL</span><span>Active Directory</span></div>
+        </div>
+      </article>
+
+      <!-- 2. APOLO Auth -->
+      <article class="card reveal d1" data-cat="auth">
+        <div class="preview">
+          <img class="shot" src="assets/img/apolo-login.PNG" alt="APOLO — Inicio de Sesión">
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Autenticación · Active Directory</span>
+          <h3>APOLO — Inicio de Sesión</h3>
+          <p>Pantalla de acceso del sistema institucional con autenticación contra Active Directory (dominio <code>migracion.gob.pa</code>) y soporte para usuarios externos con credenciales independientes y validación dinámica según perfil.</p>
+          <div class="metrics">
+            <div class="metric"><div class="v">2</div><div class="k">flujos de acceso</div></div>
+            <div class="metric"><div class="v">AD</div><div class="k">integración LDAP</div></div>
+          </div>
+          <div class="tags"><span>Laravel</span><span>LDAP / AD</span><span>Sesiones</span><span>Seguridad</span></div>
+        </div>
+      </article>
+
+      <!-- 3. Centro de Copiado -->
+      <article class="card reveal" data-cat="modulo">
+        <div class="preview">
+          <img class="shot" src="assets/img/copiado.PNG" alt="Centro de Copiado">
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Módulo APOLO · Punto de Venta</span>
+          <h3>Centro de Copiado</h3>
+          <p>Digitalización del Centro de Copiado con POS interno: carrito con cotización automática, cierre de turno, catálogo de servicios, estadísticas por día/semana/mes y monitoreo en tiempo real de operadores activos.</p>
+          <div class="metrics">
+            <div class="metric"><div class="v">POS</div><div class="k">cotización en vivo</div></div>
+            <div class="metric"><div class="v">PDF</div><div class="k">reportes de órdenes</div></div>
+          </div>
+          <div class="tags"><span>Laravel</span><span>JavaScript</span><span>MySQL</span><span>Reportes PDF</span></div>
+        </div>
+      </article>
+
+      <!-- 4. Transporte -->
+      <article class="card reveal d1" data-cat="modulo">
+        <div class="preview">
+          <img class="shot" src="assets/img/transporte.PNG" alt="Control de Transporte">
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Módulo APOLO · Gestión de Flota</span>
+          <h3>Control de Transporte</h3>
+          <p>Seguimiento de la flota vehicular institucional: registro con especificaciones técnicas, catálogo de accesorios, historial de inspecciones de 20 puntos con archivos adjuntos y generación de reportes PDF de la flota.</p>
+          <div class="metrics">
+            <div class="metric"><div class="v">20</div><div class="k">puntos de inspección</div></div>
+            <div class="metric"><div class="v">Dashboard</div><div class="k">estadísticas de flota</div></div>
+          </div>
+          <div class="tags"><span>Laravel</span><span>Eloquent</span><span>MySQL</span><span>Uploads</span></div>
+        </div>
+      </article>
+
+      <!-- 5. Solicitud de Cambio -->
+      <article class="card reveal" data-cat="modulo">
+        <div class="preview">
+          <img class="shot" src="assets/img/cambio.PNG" alt="Solicitud de Cambio">
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Módulo APOLO · Change Management</span>
+          <h3>Solicitud de Cambio</h3>
+          <p>Gestión de cambios para la DTI: clasificación por tipo (Estándar / Emergencia) con ajuste automático de prioridad, sección técnica de impacto, flujo de aprobación multinivel (Revisión DTI → Jefatura) y notificación por correo.</p>
+          <div class="metrics">
+            <div class="metric"><div class="v">Multinivel</div><div class="k">flujo de aprobación</div></div>
+            <div class="metric"><div class="v">Auto</div><div class="k">notificación correo</div></div>
+          </div>
+          <div class="tags"><span>Laravel</span><span>Mail</span><span>Workflow</span><span>MySQL</span></div>
+        </div>
+      </article>
+
+      <!-- 6. Estadísticas del Portal -->
+      <article class="card reveal d1" data-cat="data">
+        <div class="preview">
+          <img class="shot" src="assets/img/estadisticas.PNG" alt="Estadísticas del Portal">
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Analítica · Tráfico</span>
+          <h3>Estadísticas del Portal</h3>
+          <p>Panel administrativo de visitas: KPIs en tiempo real (día/semana/mes), IPs únicas por período, gráfico de los últimos 30 días e historial detallado de accesos con IP, navegador/SO y timestamp.</p>
+          <div class="metrics">
+            <div class="metric"><div class="v">30 días</div><div class="k">serie histórica</div></div>
+            <div class="metric"><div class="v">Tiempo real</div><div class="k">KPIs en vivo</div></div>
+          </div>
+          <div class="tags"><span>Laravel</span><span>JavaScript</span><span>Charts</span><span>MySQL</span></div>
+        </div>
+      </article>
+
+      <!-- 7. Dashboard Operativo -->
+      <article class="card reveal" data-cat="data">
+        <div class="preview">
+          <img class="shot" src="assets/img/dashboard.PNG" alt="Dashboard Operativo">
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Analítica · Highcharts + Mapa</span>
+          <h3>Dashboard Operativo</h3>
+          <p>Panel analítico en tiempo real de operativos: KPIs por género, serie temporal de acciones, mapa coroplético interactivo de Panamá por provincia y desglose por nacionalidad con Highcharts.</p>
+          <div class="metrics">
+            <div class="metric"><div class="v">10,210</div><div class="k">infractores registrados</div></div>
+            <div class="metric"><div class="v">Mapa</div><div class="k">coroplético interactivo</div></div>
+          </div>
+          <div class="tags"><span>Laravel</span><span>Highcharts</span><span>GeoJSON</span><span>MySQL</span></div>
+        </div>
+      </article>
+
+      <!-- 8. Configuración / Roles y Permisos -->
+      <article class="card reveal d1" data-cat="auth">
+        <div class="preview">
+          <img class="shot" src="assets/img/rbac.PNG" alt="Módulos, Roles y Permisos">
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Seguridad · Control de Acceso (RBAC)</span>
+          <h3>Módulos, Roles y Permisos</h3>
+          <p>Sistema de control de acceso granular que gobierna toda la plataforma APOLO: estructura de módulos, roles por función institucional, permisos CRUD por módulo y catálogo de departamentos del SNM.</p>
+          <div class="metrics">
+            <div class="metric"><div class="v">140+</div><div class="k">permisos granulares</div></div>
+            <div class="metric"><div class="v">40+</div><div class="k">roles institucionales</div></div>
+          </div>
+          <div class="tags"><span>Laravel</span><span>RBAC</span><span>Middleware</span><span>MySQL</span></div>
+        </div>
+      </article>
+
+      <!-- 9. Reclutamiento Academia SNM -->
+      <article class="card reveal d1" data-cat="modulo">
+        <div class="preview">
+          <img class="shot" src="assets/img/reclutamiento.png" alt="Sistema de Reclutamiento SNM">
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Módulo APOLO · Reclutamiento</span>
+          <h3>Reclutamiento — Academia SNM</h3>
+          <p>Sistema para la gestión de aspirantes a la Academia del Servicio Nacional de Migración: registro de candidatos, control documental, seguimiento del proceso de selección y panel administrativo para evaluadores.</p>
+          <div class="metrics">
+            <div class="metric"><div class="v">End-to-end</div><div class="k">proceso de selección</div></div>
+            <div class="metric"><div class="v">Docs</div><div class="k">control documental</div></div>
+          </div>
+          <div class="tags"><span>Laravel</span><span>MySQL</span><span>Blade</span><span>JavaScript</span></div>
+        </div>
+      </article>
+
+      <!-- 10. Noticias -->
+      <article class="card reveal" data-cat="modulo">
+        <div class="preview">
+          <img class="shot" src="assets/img/noticias.PNG" alt="Gestión de Noticias">
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Módulo APOLO · CMS Institucional</span>
+          <h3>Gestión de Noticias</h3>
+          <p>Comunicación institucional dentro de APOLO: vista pública en grilla con imagen destacada y "Leer más", bienvenida personalizada por usuario y panel administrativo con CRUD, control de estado (Publicado / Borrador) y buscador.</p>
+          <div class="metrics">
+            <div class="metric"><div class="v">CRUD</div><div class="k">panel editorial</div></div>
+            <div class="metric"><div class="v">2 vistas</div><div class="k">pública + admin</div></div>
+          </div>
+          <div class="tags"><span>Laravel</span><span>Blade</span><span>JavaScript</span><span>MySQL</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= STACK ================= -->
+<section class="block" id="stack">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Caja de herramientas</span>
+      <h2 class="section-title">Stack tecnológico</h2>
+      <p>Desarrollo full-stack como base, con un perfil creciente en administración de sistemas e infraestructura.</p>
+    </div>
+    <div class="stack-grid">
+      <div class="stack-card reveal">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> Backend</h3>
+        <div class="chips"><span class="chip"><span class="pre">$</span> PHP</span><span class="chip">Laravel</span><span class="chip">Eloquent ORM</span><span class="chip">Blade</span><span class="chip">Artisan</span><span class="chip">APIs REST</span><span class="chip">Java</span><span class="chip">Python</span></div>
+      </div>
+      <div class="stack-card reveal d1">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> Frontend & Móvil</h3>
+        <div class="chips"><span class="chip">Vue 3</span><span class="chip">JavaScript</span><span class="chip">Bootstrap</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">Highcharts</span><span class="chip">Ionic</span><span class="chip">Capacitor</span></div>
+      </div>
+      <div class="stack-card reveal">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg> Bases de Datos</h3>
+        <div class="chips"><span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span><span class="chip">HeidiSQL</span><span class="chip">Diseño de esquemas</span></div>
+      </div>
+      <div class="stack-card reveal d1">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg> Infraestructura & DevOps</h3>
+        <div class="chips"><span class="chip">VMware</span><span class="chip">Windows Server</span><span class="chip">Active Directory</span><span class="chip">Linux</span><span class="chip">Veeam</span><span class="chip">Zabbix</span><span class="chip">Git</span><span class="chip">VS Code</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOBRE MÍ ================= -->
+<section class="block" id="sobre-mi">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Quién soy</span>
+      <h2 class="section-title">Sobre mí</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <div class="avatar">VP</div>
+        <div class="name">Víctor A. Pérez M.</div>
+        <div class="sub">Full-Stack Developer & Sysadmin</div>
+        <div class="facts">
+          <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Ciudad de Panamá, Panamá</div>
+          <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> Lic. en Desarrollo de Aplicaciones Tecnológicas · U. de Panamá</div>
+          <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> DTI · Servicio Nacional de Migración</div>
+        </div>
+      </div>
+      <div class="about-text reveal d1">
+        <p>Soy <strong>desarrollador full-stack</strong> con experiencia construyendo aplicaciones web y móviles completas: diseño el esquema de base de datos, levanto la API en Laravel, construyo la interfaz con Vue o Blade, y la dejo en producción. Me gustan los sistemas que resuelven problemas concretos y el código limpio, seguro y mantenible.</p>
+        <p>Trabajo de extremo a extremo —<span class="accent">del modelo de datos a la UI</span>— con foco en arquitectura backend, REST APIs (JWT/OAuth2), integración SOAP/WSDL y desarrollo móvil con <strong>Ionic + Vue 3 + Capacitor</strong>. Actualmente amplío mi perfil hacia <strong>administración de sistemas e infraestructura</strong>: servidores Linux/Windows, VMware ESXi, Active Directory, Veeam y Zabbix.</p>
+        <p>He trabajado como desarrollador full-stack e infraestructura en la <strong>DTI del Servicio Nacional de Migración de Panamá</strong>, y como pasante en la <strong>Autoridad del Canal de Panamá (ACP)</strong>, donde colaboré en análisis de datos, automatización de flujos con Power Apps y reportes con Power BI y Tableau.</p>
+
+        <div class="tl">
+          <div class="tl-item">
+            <div class="yr">Mayo 2026 — Actualidad</div>
+            <h4>Administrador de Infraestructura · SNM</h4>
+            <p>Servidores Linux (Debian, RHEL, Rocky) y Windows Server 2022, VMware ESXi/vSphere, Active Directory, respaldos con Veeam y monitoreo con Zabbix 7.0.</p>
+          </div>
+          <div class="tl-item">
+            <div class="yr">Sep 2025 – May 2026</div>
+            <h4>Desarrollador Full-Stack · SNM</h4>
+            <p>Ecosistema APOLO, sistema público de reclutamiento y app móvil <strong>Operaciones Atlas</strong> (Ionic + Vue 3). REST APIs, SOAP/WSDL, MySQL/PostgreSQL y principios SOLID.</p>
+          </div>
+          <div class="tl-item">
+            <div class="yr">Jun – Ago 2025</div>
+            <h4>Pasante · Autoridad del Canal de Panamá (ACP)</h4>
+            <p>Help Desk N1 en Esclusas de Miraflores. Limpieza y trazabilidad de datos, automatización con Power Apps y reportes con Power BI y Tableau.</p>
+          </div>
+          <div class="tl-item">
+            <div class="yr">Formación y Certificaciones</div>
+            <h4>Universidad de Panamá · Cisco · Dell · AWS · Microsoft</h4>
+            <p>Lic. en Desarrollo de Aplicaciones Tecnológicas – U. de Panamá (en curso) · CCNA: Introduction to Networks – Cisco / INADEH · Técnico en Sistemas Informáticos – Dell Technologies & Glasswing · AWS Cloud Fundamentals – Skilling Panamá · Microsoft Security Essentials – Microsoft/LinkedIn · Claude Code in Action – Anthropic.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACTO ================= -->
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow" style="justify-content:center">Hablemos</span>
+      <h2>¿Construimos algo<br><span class="grad">juntos?</span></h2>
+      <p>Estoy abierto a nuevos proyectos y oportunidades. Escríbeme y conversamos.</p>
+      <div class="contact-links">
+        <a class="clink" href="mailto:vaperezzm@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+          vaperezzm@gmail.com
+        </a>
+        <a class="clink" href="https://linkedin.com/in/vperez6" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          www.linkedin.com/in/vperez6
+        </a>
+        <a class="clink" href="https://github.com/rxppxc" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.3v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg>
+          github.com/rxppxc
+        </a>
+        <a class="clink" href="https://wa.me/50760000111" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          +507 6000-0111 · WhatsApp
+        </a>
+        <a class="clink" href="tel:+50767351374">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.94-.94a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +507 6735-1374 · Llamadas
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="cp">© <span id="year"></span> Víctor A. Pérez M. · Diseñado y construido con <b>código</b>.</div>
+      <div class="top" id="toTop">Volver a Inicio
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

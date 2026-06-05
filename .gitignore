@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Node (si se agregan herramientas npm en el futuro)
+node_modules/
+npm-debug.log*
+
+# Build output (si se agrega Vite/Webpack)
+dist/
+build/
