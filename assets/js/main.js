@@ -74,6 +74,19 @@ const countIO = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-count]').forEach(el => countIO.observe(el));
 
+/* Visit counter */
+fetch('https://api.counterapi.dev/v1/rxppxc-portfolio/visits/up')
+  .then(r => r.json())
+  .then(data => {
+    const num = document.getElementById('visit-num');
+    const wrapper = document.getElementById('visit-counter');
+    if (num && data.count) {
+      num.textContent = data.count.toLocaleString('en');
+      wrapper.removeAttribute('hidden');
+    }
+  })
+  .catch(() => {});
+
 /* Project filters */
 const filters = document.querySelectorAll('.filter');
 const cards = document.querySelectorAll('#grid .card');
