@@ -89,7 +89,7 @@ export const projects: Project[] = [
     category: 'modulo',
     img: '/assets/img/cambio.PNG',
     alt: 'Change Request module screenshot',
-    objectPosition: 'center 20%',
+    objectPosition: 'center 0%',
     tag: 'APOLO Module · Change Management',
     title: 'Change Request',
     description:
@@ -120,7 +120,7 @@ export const projects: Project[] = [
     category: 'data',
     img: '/assets/img/dashboard.PNG',
     alt: 'Operations Dashboard screenshot',
-    objectPosition: 'center 55%',
+    objectPosition: 'center 0%',
     tag: 'Analytics · Highcharts + Map',
     title: 'Operations Dashboard',
     description:
