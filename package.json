@@ -5,19 +5,20 @@
   "type": "module",
   "description": "Portfolio of Víctor A. Pérez M. — Full-Stack Developer & Infrastructure (DevOps)",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
   },
   "dependencies": {
+    "@astrojs/vue": "^6.0.1",
+    "astro": "^6.4.6",
     "vue": "^3.5.35"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.3.0",
-    "@vitejs/plugin-vue": "^6.0.7",
+    "@astrojs/check": "^0.9.9",
+    "@tailwindcss/postcss": "^4.3.0",
     "tailwindcss": "^4.3.0",
-    "typescript": "^6.0.3",
-    "vite": "^8.0.16",
-    "vue-tsc": "^3.3.4"
+    "typescript": "^6.0.3"
   }
 }

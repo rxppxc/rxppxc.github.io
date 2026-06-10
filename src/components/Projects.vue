@@ -23,7 +23,7 @@ const visible = computed(() =>
 <template>
   <section class="block" id="projects">
     <div class="wrap">
-      <div class="section-head" v-reveal>
+      <div class="section-head">
         <span class="eyebrow">Selected work</span>
         <h2 class="section-title">Projects</h2>
         <p>
@@ -33,7 +33,7 @@ const visible = computed(() =>
         </p>
       </div>
 
-      <div class="filters" v-reveal="1" role="group" aria-label="Filter projects">
+      <div class="filters" role="group" aria-label="Filter projects">
         <button
           v-for="f in filters"
           :key="f.value"
@@ -45,7 +45,7 @@ const visible = computed(() =>
         </button>
       </div>
 
-      <div class="block-divider" v-reveal="2">
+      <div class="block-divider">
         <span class="eyebrow">Professional experience</span>
         <p class="block-divider-note">
           Systems developed during my tenure at the
@@ -54,9 +54,9 @@ const visible = computed(() =>
         </p>
       </div>
 
-      <div class="projects" id="grid">
-        <ProjectCard v-for="(p, i) in visible" :key="p.id" :project="p" :index="i" />
-      </div>
+      <TransitionGroup name="card" tag="div" class="projects" id="grid">
+        <ProjectCard v-for="p in visible" :key="p.id" :project="p" />
+      </TransitionGroup>
     </div>
   </section>
 </template>

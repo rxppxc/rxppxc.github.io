@@ -1,0 +1,89 @@
+---
+const timeline = [
+  {
+    year: 'May 2026 — Present',
+    title: 'Infrastructure Administrator · SNM',
+    text: 'Linux servers (Debian, RHEL, Rocky) and Windows Server 2022, VMware ESXi/vSphere, Active Directory, backups with Veeam, and monitoring with Zabbix 7.0.',
+  },
+  {
+    year: 'Sep 2025 – May 2026',
+    title: 'Full-Stack Developer · SNM',
+    text: 'APOLO ecosystem, public recruitment system, and mobile app <strong>Operaciones Atlas</strong> (Ionic + Vue 3). REST APIs, SOAP/WSDL, MySQL/PostgreSQL, and SOLID principles.',
+  },
+  {
+    year: 'Jun – Aug 2025',
+    title: 'Intern · Panama Canal Authority (ACP)',
+    text: 'Help Desk N1 at Miraflores Locks. Data cleaning and traceability, workflow automation with Power Apps, and reporting with Power BI and Tableau.',
+  },
+  {
+    year: 'Education & Certifications',
+    title: 'University of Panama · Cisco · Dell · AWS · Microsoft',
+    text: 'B.S. in Technology Application Development – University of Panama (ongoing) · CCNA: Introduction to Networks – Cisco / INADEH · Technical in IT Systems – Dell Technologies &amp; Glasswing · AWS Cloud Fundamentals – Skilling Panama · Microsoft Security Essentials – Microsoft/LinkedIn · Claude Code in Action – Anthropic.',
+  },
+]
+---
+
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Who I am</span>
+      <h2 class="section-title">About me</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <div class="avatar">VP</div>
+        <div class="name">Víctor A. Pérez M.</div>
+        <div class="sub">Full-Stack Developer &amp; Infrastructure (DevOps)</div>
+        <div class="facts">
+          <div class="fact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            Panama City, Panama
+          </div>
+          <div class="fact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            B.S. in Technology Application Development · University of Panama
+          </div>
+          <div class="fact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            DTI · National Migration Service
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text reveal" style="transition-delay:.08s">
+        <p>
+          I'm a <strong>full-stack developer</strong> with experience building complete web and
+          mobile applications under <strong>MVC architecture</strong>: I design the database schema,
+          build the API in Laravel, craft the interface with Vue or Blade, and ship it to production.
+          I enjoy systems that solve real problems and clean, secure, maintainable code.
+        </p>
+        <p>
+          I work end-to-end —<span class="accent">from data model to UI</span>— with a focus on
+          backend architecture, REST APIs (JWT/OAuth2), SOAP/WSDL integration, and mobile development
+          with <strong>Ionic + Vue 3 + Capacitor</strong>. I'm currently expanding into
+          <strong>systems administration and infrastructure</strong>: Linux/Windows servers, VMware
+          ESXi, Active Directory, Veeam, and Zabbix.
+        </p>
+        <p>
+          I've worked as a full-stack developer and infrastructure admin at the
+          <strong>DTI of Panama's National Migration Service</strong>, and as an intern at the
+          <strong>Panama Canal Authority (ACP)</strong>, where I worked on data analysis, workflow
+          automation with Power Apps, and reporting with Power BI and Tableau.
+        </p>
+
+        <div class="tl">
+          {
+            timeline.map((item) => (
+              <div class="tl-item">
+                <div class="yr">{item.year}</div>
+                <h4>{item.title}</h4>
+                <p set:html={item.text} />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

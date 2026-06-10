@@ -160,6 +160,10 @@ html[data-theme="light"] {
   }
   .icon-btn:hover { border-color: var(--steel-dim); color: var(--steel); }
   .icon-btn svg { width: 18px; height: 18px; }
+  /* Theme toggle icon swap */
+  #theme .sun { display: none; }
+  html[data-theme="light"] #theme .moon { display: none; }
+  html[data-theme="light"] #theme .sun { display: block; }
 
   .btn {
     display: inline-flex; align-items: center; gap: .5rem; font-family: var(--font-mono);
@@ -282,6 +286,11 @@ html[data-theme="light"] {
     transition: transform .35s var(--ease), border-color .35s var(--ease), box-shadow .35s var(--ease);
   }
   .card:hover { transform: translateY(-5px); border-color: var(--steel-dim); box-shadow: var(--shadow), inset 0 1px 0 var(--bevel-hi); }
+  /* Filter transitions (Vue <TransitionGroup name="card">) */
+  .card-enter-active, .card-leave-active { transition: opacity .4s var(--ease), transform .4s var(--ease); }
+  .card-enter-from, .card-leave-to { opacity: 0; transform: translateY(18px) scale(.98); }
+  .card-leave-active { position: absolute; }
+  .card-move { transition: transform .4s var(--ease); }
 
   .preview {
     aspect-ratio: 16/9; position: relative; overflow: hidden; padding: 16px 16px 0;

@@ -1,0 +1,53 @@
+---
+const stats = [
+  { count: 10, suffix: '', label: 'Projects in this portfolio' },
+  { count: 10, suffix: '+', label: 'Modules deployed to production' },
+  { count: 10210, suffix: '', label: 'Records analyzed' },
+  { count: 20, suffix: '+', label: 'Integrated systems' },
+]
+---
+
+<section class="block no-pad" id="stats" aria-label="Key numbers">
+  <div class="wrap">
+    <div class="stats">
+      {
+        stats.map((s, i) => (
+          <div class="stat reveal" style={`transition-delay:${i * 0.08}s`}>
+            <div class="num" data-count={s.count} data-suffix={s.suffix}>0</div>
+            <div class="lbl">{s.label}</div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue
+        const el = entry.target as HTMLElement
+        const target = Number(el.dataset.count)
+        const suffix = el.dataset.suffix ?? ''
+        const duration = 1400
+        const start = performance.now()
+
+        const frame = (now: number) => {
+          const p = Math.min((now - start) / duration, 1)
+          const eased = 1 - Math.pow(1 - p, 3)
+          if (p < 1) {
+            el.textContent = Math.floor(eased * target).toLocaleString('en') + suffix
+            requestAnimationFrame(frame)
+          } else {
+            el.textContent = target.toLocaleString('en') + suffix
+          }
+        }
+        requestAnimationFrame(frame)
+        io.unobserve(el)
+      }
+    },
+    { threshold: 0.5 },
+  )
+  document.querySelectorAll<HTMLElement>('[data-count]').forEach((el) => io.observe(el))
+</script>

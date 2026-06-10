@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/Header.astro'
+import Hero from '../components/Hero.astro'
+import Marquee from '../components/Marquee.astro'
+import Stats from '../components/Stats.astro'
+import Projects from '../components/Projects.vue'
+import Stack from '../components/Stack.astro'
+import About from '../components/About.astro'
+import Contact from '../components/Contact.astro'
+import Footer from '../components/Footer.astro'
+---
+
+<Layout>
+  <Header />
+  <main>
+    <Hero />
+    <Marquee />
+    <Stats />
+    <!-- Interactive Vue island: reactive filters + animated grid -->
+    <div class="reveal"><Projects client:visible /></div>
+    <Stack />
+    <About />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>

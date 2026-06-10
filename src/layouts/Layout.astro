@@ -1,0 +1,74 @@
+---
+import '../style.css'
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const {
+  title = 'Víctor A. Pérez M. — Full-Stack Developer',
+  description = 'Portfolio of Víctor A. Pérez M., Full-Stack Developer (Laravel · Vue · MySQL) and Infrastructure / DevOps Administrator.',
+} = Astro.props
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Fonts: Archivo (display) · Inter (body) · JetBrains Mono (code/labels) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Apply persisted theme before paint to avoid a flash -->
+    <script is:inline>
+      try {
+        const t = localStorage.getItem('theme')
+        if (t) document.documentElement.setAttribute('data-theme', t)
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div class="progress" id="progress"></div>
+    <slot />
+
+    <script>
+      // Scroll progress bar + sticky-header shadow
+      const header = document.getElementById('header')
+      const progress = document.getElementById('progress')
+      window.addEventListener(
+        'scroll',
+        () => {
+          const max = document.documentElement.scrollHeight - window.innerHeight
+          if (progress) progress.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%'
+          header?.classList.toggle('scrolled', window.scrollY > 20)
+        },
+        { passive: true },
+      )
+
+      // Reveal-on-scroll for any element with the .reveal class
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in')
+              io.unobserve(entry.target)
+            }
+          }
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -40px 0px' },
+      )
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el))
+    </script>
+  </body>
+</html>

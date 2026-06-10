@@ -1,0 +1,97 @@
+---
+const spec = [
+  { label: 'Role', value: 'Full-Stack Developer', strong: true },
+  { label: 'Backend', value: 'PHP · Laravel' },
+  { label: 'Frontend', value: 'Vue 3 · JS · Bootstrap' },
+  { label: 'Data', value: 'MySQL · PostgreSQL' },
+  { label: 'Infra', value: 'VMware · Linux · AD' },
+  { label: 'Focus', value: 'clean + scalable' },
+]
+---
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="status reveal"><span class="pulse"></span> Available for new projects</div>
+        <h1 class="reveal" style="transition-delay:.08s"><span class="grad">Víctor A.<br />Pérez M.</span></h1>
+        <div class="role reveal" style="transition-delay:.16s"><span id="role"></span><span class="cursor"></span></div>
+        <p class="lede reveal" style="transition-delay:.24s">
+          I design and build end-to-end web applications — from the database model to the user
+          interface. I specialize in robust systems and clean code, with real production experience
+          and a growing profile in infrastructure and DevOps.
+        </p>
+        <div class="hero-cta reveal" style="transition-delay:.32s">
+          <a href="#projects" class="btn btn-primary">View projects
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="/assets/img/CV_Victor_Perez.pdf" download class="btn btn-ghost">Download CV
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          </a>
+        </div>
+        <div class="hero-meta reveal" style="transition-delay:.32s">
+          <div class="m">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            Panama City, Panama
+          </div>
+        </div>
+      </div>
+
+      <!-- Spec plate — engraved steel dossier -->
+      <div class="reveal" style="transition-delay:.24s">
+        <div class="plate">
+          <div class="plate-head">
+            <span class="rivet"></span><span class="rivet"></span><span class="rivet"></span>
+            <span class="tname">~/victor — profile.spec</span>
+          </div>
+          <div class="plate-body">
+            {
+              spec.map((row) => (
+                <div class="plate-row">
+                  <span class="plate-label">{row.label}</span>
+                  <span class="plate-value">{row.strong ? <b>{row.value}</b> : row.value}</span>
+                </div>
+              ))
+            }
+            <div class="deploy">deploy ➜ production ✓</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const roles = [
+    'Full-Stack Developer',
+    'Laravel & Vue Specialist',
+    'Infrastructure Administrator',
+    'DevOps & Systems',
+  ]
+  const el = document.getElementById('role')
+  let wordIndex = 0
+  let charIndex = 0
+  let deleting = false
+
+  function tick() {
+    if (!el) return
+    const word = roles[wordIndex]
+    el.textContent = word.substring(0, charIndex)
+    if (!deleting && charIndex < word.length) {
+      charIndex++
+      setTimeout(tick, 70)
+    } else if (deleting && charIndex > 0) {
+      charIndex--
+      setTimeout(tick, 35)
+    } else if (!deleting) {
+      deleting = true
+      setTimeout(tick, 1700)
+    } else {
+      deleting = false
+      wordIndex = (wordIndex + 1) % roles.length
+      setTimeout(tick, 350)
+    }
+  }
+
+  tick()
+</script>

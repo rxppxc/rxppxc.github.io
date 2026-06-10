@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Project } from '../data/projects'
 
-const props = defineProps<{ project: Project; index: number }>()
+const props = defineProps<{ project: Project }>()
 
 const imgStyle = props.project.objectPosition
   ? { objectPosition: props.project.objectPosition }
@@ -9,7 +9,7 @@ const imgStyle = props.project.objectPosition
 </script>
 
 <template>
-  <article class="card" :data-cat="project.category" v-reveal="(index % 2) + 1">
+  <article class="card" :data-cat="project.category">
     <div class="preview">
       <div class="frame">
         <div class="frame-bar"><span></span><span></span><span></span><div class="url"></div></div>
