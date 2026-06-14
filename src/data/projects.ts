@@ -126,7 +126,7 @@ export const projects: Project[] = [
     description:
       'Real-time analytical panel for field operations: KPIs by gender, action time series, interactive choropleth map of Panama by province, and nationality breakdown with Highcharts.',
     metrics: [
-      { v: '10,210', k: 'registered records' },
+      { v: '10,235', k: 'registered records' },
       { v: 'Map', k: 'interactive choropleth' },
     ],
     tags: ['Laravel', 'Highcharts', 'GeoJSON', 'MySQL'],
