@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Portfolio of Víctor A. Pérez M. — Full-Stack Developer & Infrastructure (DevOps)",
+  "description": "Portfolio of Victor A. Perez M. — Full-Stack Developer & Infrastructure (DevOps)",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
