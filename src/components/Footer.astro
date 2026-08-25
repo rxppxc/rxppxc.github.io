@@ -5,17 +5,20 @@ const year = new Date().getFullYear()
 <footer>
   <div class="wrap">
     <div class="foot">
-      <div class="cp">
+      <div class="cp" data-i18n="en">
         © {year} Victor A. Perez M. · Built with <b>Astro · Vue 3 · TypeScript · Tailwind</b>.
+      </div>
+      <div class="cp" data-i18n="es">
+        © {year} Victor A. Perez M. · Construido con <b>Astro · Vue 3 · TypeScript · Tailwind</b>.
       </div>
 
       <div class="visit-counter" id="visit-counter" hidden>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-        <span id="visit-num">—</span> visits
+        <span id="visit-num">—</span> <span data-i18n="en">visits</span><span data-i18n="es">visitas</span>
       </div>
 
       <div class="top" id="toTop">
-        Back to top
+        <span data-i18n="en">Back to top</span><span data-i18n="es">Volver arriba</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
       </div>
     </div>

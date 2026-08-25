@@ -1,9 +1,9 @@
 ---
 const stats = [
-  { count: 10, suffix: '', label: 'Projects in this portfolio' },
-  { count: 10, suffix: '+', label: 'Modules deployed to production' },
-  { count: 10235, suffix: '', label: 'Records analyzed' },
-  { count: 20, suffix: '+', label: 'Integrated systems' },
+  { count: 10, suffix: '', label: 'Projects in this portfolio', labelEs: 'Proyectos en este portafolio' },
+  { count: 10, suffix: '+', label: 'Modules deployed to production', labelEs: 'Módulos desplegados a producción' },
+  { count: 10235, suffix: '', label: 'Records analyzed', labelEs: 'Registros analizados' },
+  { count: 20, suffix: '+', label: 'Integrated systems', labelEs: 'Sistemas integrados' },
 ]
 ---
 
@@ -14,7 +14,8 @@ const stats = [
         stats.map((s, i) => (
           <div class="stat reveal" style={`transition-delay:${i * 0.08}s`}>
             <div class="num" data-count={s.count} data-suffix={s.suffix}>0</div>
-            <div class="lbl">{s.label}</div>
+            <div class="lbl" data-i18n="en">{s.label}</div>
+            <div class="lbl" data-i18n="es">{s.labelEs}</div>
           </div>
         ))
       }

@@ -2,23 +2,35 @@
 const timeline = [
   {
     year: 'May 2026 — Present',
+    yearEs: 'May 2026 — Presente',
     title: 'Infrastructure Administrator (DevOps) · SNM',
+    titleEs: 'Administrador de Infraestructura (DevOps) · SNM',
     text: 'Linux servers (Debian, RHEL, Rocky) and Windows Server 2022, VMware ESXi/vSphere, Active Directory, backups with Veeam, and monitoring with Zabbix 7.0.',
+    textEs: 'Servidores Linux (Debian, RHEL, Rocky) y Windows Server 2022, VMware ESXi/vSphere, Active Directory, respaldos con Veeam, y monitoreo con Zabbix 7.0.',
   },
   {
     year: 'Sep 2025 – May 2026',
+    yearEs: 'Sep 2025 – May 2026',
     title: 'Full-Stack Developer · SNM',
+    titleEs: 'Desarrollador Full-Stack · SNM',
     text: 'APOLO ecosystem, public recruitment system, and mobile app <strong>Operaciones Atlas</strong> (Ionic + Vue 3). REST APIs, SOAP/WSDL, MySQL/PostgreSQL, and SOLID principles.',
+    textEs: 'Ecosistema APOLO, sistema público de reclutamiento, y app móvil <strong>Operaciones Atlas</strong> (Ionic + Vue 3). APIs REST, SOAP/WSDL, MySQL/PostgreSQL, y principios SOLID.',
   },
   {
     year: 'Jun – Aug 2025',
+    yearEs: 'Jun – Ago 2025',
     title: 'Intern · Panama Canal Authority (ACP)',
+    titleEs: 'Pasante · Autoridad del Canal de Panamá (ACP)',
     text: 'Help Desk N1 at Miraflores Locks. Data cleaning and traceability, workflow automation with Power Apps, and reporting with Power BI and Tableau.',
+    textEs: 'Help Desk N1 en las Esclusas de Miraflores. Limpieza y trazabilidad de datos, automatización de flujos con Power Apps, y reportería con Power BI y Tableau.',
   },
   {
     year: 'Education & Certifications',
+    yearEs: 'Educación y Certificaciones',
     title: 'University of Panama · Cisco · Dell · AWS · Microsoft',
+    titleEs: 'Universidad de Panamá · Cisco · Dell · AWS · Microsoft',
     text: 'B.S. in Technology Application Development – University of Panama (ongoing) · CCNA: Introduction to Networks – Cisco / INADEH · Technical in IT Systems – Dell Technologies &amp; Glasswing · AWS Cloud Fundamentals – Skilling Panama · Microsoft Security Essentials – Microsoft/LinkedIn · Claude Code in Action – Anthropic.',
+    textEs: 'Licenciatura en Desarrollo de Aplicaciones Tecnológicas – Universidad de Panamá (en curso) · CCNA: Introducción a las Redes – Cisco / INADEH · Técnico en Sistemas de TI – Dell Technologies &amp; Glasswing · AWS Cloud Fundamentals – Skilling Panama · Microsoft Security Essentials – Microsoft/LinkedIn · Claude Code in Action – Anthropic.',
   },
 ]
 ---
@@ -26,39 +38,50 @@ const timeline = [
 <section class="block" id="about">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Who I am</span>
-      <h2 class="section-title">About me</h2>
+      <span class="eyebrow" data-i18n="en">Who I am</span><span class="eyebrow" data-i18n="es">Quién soy</span>
+      <h2 class="section-title" data-i18n="en">About me</h2>
+      <h2 class="section-title" data-i18n="es">Sobre mí</h2>
     </div>
 
     <div class="about-grid">
       <div class="about-card reveal">
         <div class="avatar">VP</div>
         <div class="name">Victor A. Perez M.</div>
-        <div class="sub">Full-Stack Developer &amp; Infrastructure (DevOps)</div>
+        <div class="sub" data-i18n="en">Full-Stack Developer &amp; Infrastructure (DevOps)</div>
+        <div class="sub" data-i18n="es">Desarrollador Full-Stack e Infraestructura (DevOps)</div>
         <div class="facts">
           <div class="fact">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            Panama City, Panama
+            <span data-i18n="en">Panama City, Panama</span><span data-i18n="es">Ciudad de Panamá, Panamá</span>
           </div>
           <div class="fact">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-            B.S. in Technology Application Development · University of Panama
+            <span data-i18n="en">B.S. in Technology Application Development · University of Panama</span>
+            <span data-i18n="es">Lic. en Desarrollo de Aplicaciones Tecnológicas · Universidad de Panamá</span>
           </div>
           <div class="fact">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-            DTI · National Migration Service
+            <span data-i18n="en">DTI · National Migration Service</span>
+            <span data-i18n="es">DTI · Servicio Nacional de Migración</span>
           </div>
         </div>
       </div>
 
       <div class="about-text reveal" style="transition-delay:.08s">
-        <p>
+        <p data-i18n="en">
           I'm a <strong>full-stack developer</strong> with experience building complete web and
           mobile applications under <strong>MVC architecture</strong>: I design the database schema,
           build the API in Laravel, craft the interface with Vue or Blade, and ship it to production.
           I enjoy systems that solve real problems and clean, secure, maintainable code.
         </p>
-        <p>
+        <p data-i18n="es">
+          Soy <strong>desarrollador full-stack</strong> con experiencia construyendo aplicaciones web
+          y móviles completas bajo <strong>arquitectura MVC</strong>: diseño el esquema de base de
+          datos, construyo la API en Laravel, elaboro la interfaz con Vue o Blade, y la despliego a
+          producción. Disfruto de sistemas que resuelven problemas reales y código limpio, seguro y
+          mantenible.
+        </p>
+        <p data-i18n="en">
           I work end-to-end —<span class="accent">from data model to UI</span>— with a focus on
           backend architecture, REST APIs (JWT/OAuth2), SOAP/WSDL integration, and mobile development
           with <strong>Ionic + Vue 3 + Capacitor</strong>. On the
@@ -66,21 +89,40 @@ const timeline = [
           running Linux (Debian, RHEL, Rocky) and Windows Server, VMware ESXi/vSphere virtualization,
           Active Directory, Veeam backups, and Zabbix monitoring.
         </p>
-        <p>
+        <p data-i18n="es">
+          Trabajo de extremo a extremo —<span class="accent">desde el modelo de datos hasta la
+          UI</span>— con foco en arquitectura backend, APIs REST (JWT/OAuth2), integración SOAP/WSDL,
+          y desarrollo móvil con <strong>Ionic + Vue 3 + Capacitor</strong>. Del lado de
+          <strong>infraestructura (DevOps)</strong>, administro servidores de centro de datos con
+          Linux (Debian, RHEL, Rocky) y Windows Server, virtualización VMware ESXi/vSphere, Active
+          Directory, respaldos con Veeam, y monitoreo con Zabbix.
+        </p>
+        <p data-i18n="en">
           I've worked as a full-stack developer at the <strong>DTI of Panama's National Migration
           Service</strong>, where I now serve as <strong>Infrastructure Administrator</strong>
           maintaining the datacenter and its server fleet. I also interned at the
           <strong>Panama Canal Authority (ACP)</strong>, where I worked on data analysis, workflow
           automation with Power Apps, and reporting with Power BI and Tableau.
         </p>
+        <p data-i18n="es">
+          He trabajado como desarrollador full-stack en la <strong>DTI del Servicio Nacional de
+          Migración de Panamá</strong>, donde ahora me desempeño como <strong>Administrador de
+          Infraestructura</strong> manteniendo el centro de datos y su flota de servidores. También
+          fui pasante en la <strong>Autoridad del Canal de Panamá (ACP)</strong>, donde trabajé en
+          análisis de datos, automatización de flujos con Power Apps, y reportería con Power BI y
+          Tableau.
+        </p>
 
         <div class="tl">
           {
             timeline.map((item) => (
               <div class="tl-item">
-                <div class="yr">{item.year}</div>
-                <h4>{item.title}</h4>
-                <p set:html={item.text} />
+                <div class="yr" data-i18n="en">{item.year}</div>
+                <div class="yr" data-i18n="es">{item.yearEs}</div>
+                <h4 data-i18n="en">{item.title}</h4>
+                <h4 data-i18n="es">{item.titleEs}</h4>
+                <p data-i18n="en" set:html={item.text} />
+                <p data-i18n="es" set:html={item.textEs} />
               </div>
             ))
           }

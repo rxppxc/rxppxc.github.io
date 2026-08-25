@@ -423,6 +423,41 @@ html[data-theme="light"] {
 }
 
 /* ============================================================
+   I18N — language toggle (EN default, ES via [data-lang="es"])
+   ------------------------------------------------------------
+   Static (non-Vue) content is authored twice, tagged data-i18n="en"/"es",
+   and CSS alone decides which copy is visible — matches <html data-lang>
+   set by Header.astro's toggle script, so there's no flash on load even
+   for a saved "es" preference (the pre-paint script in Layout.astro sets
+   the attribute before first paint). The Vue islands (project grid) skip
+   this entirely and re-render from the `lang` prop instead.
+   ============================================================ */
+[data-i18n] { display: none; }
+
+html:not([data-lang="es"]) span[data-i18n="en"],
+html:not([data-lang="es"]) a[data-i18n="en"] { display: inline; }
+html[data-lang="es"] span[data-i18n="es"],
+html[data-lang="es"] a[data-i18n="es"] { display: inline; }
+
+html:not([data-lang="es"]) p[data-i18n="en"],
+html:not([data-lang="es"]) div[data-i18n="en"],
+html:not([data-lang="es"]) h2[data-i18n="en"],
+html:not([data-lang="es"]) h3[data-i18n="en"],
+html:not([data-lang="es"]) h4[data-i18n="en"] { display: block; }
+html[data-lang="es"] p[data-i18n="es"],
+html[data-lang="es"] div[data-i18n="es"],
+html[data-lang="es"] h2[data-i18n="es"],
+html[data-lang="es"] h3[data-i18n="es"],
+html[data-lang="es"] h4[data-i18n="es"] { display: block; }
+
+/* .eyebrow needs its inline-flex back (aligns the ::before rule with the text) */
+html:not([data-lang="es"]) .eyebrow[data-i18n="en"] { display: inline-flex; }
+html[data-lang="es"] .eyebrow[data-i18n="es"] { display: inline-flex; }
+
+/* Language toggle button: reuse the same icon-btn look, just a text code */
+#lang { font-family: var(--font-mono); font-size: .72rem; font-weight: 700; letter-spacing: .04em; }
+
+/* ============================================================
    KEYFRAMES
    ============================================================ */
 @keyframes pulse {

@@ -1,11 +1,11 @@
 ---
 const spec = [
-  { label: 'Role', value: 'Full-Stack Developer', strong: true },
-  { label: 'Backend', value: 'PHP · Laravel' },
-  { label: 'Frontend', value: 'Vue 3 · JS · Bootstrap' },
-  { label: 'Data', value: 'MySQL · PostgreSQL' },
-  { label: 'Infra', value: 'VMware · Linux · AD' },
-  { label: 'Focus', value: 'clean + scalable' },
+  { en: 'Role', es: 'Rol', value: 'Full-Stack Developer', strong: true },
+  { en: 'Backend', es: 'Backend', value: 'PHP · Laravel' },
+  { en: 'Frontend', es: 'Frontend', value: 'Vue 3 · JS · Bootstrap' },
+  { en: 'Data', es: 'Datos', value: 'MySQL · PostgreSQL' },
+  { en: 'Infra', es: 'Infra', value: 'VMware · Linux · AD' },
+  { en: 'Focus', es: 'Enfoque', value: 'clean + scalable', valueEs: 'limpio + escalable' },
 ]
 ---
 
@@ -13,26 +13,41 @@ const spec = [
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="status reveal"><span class="pulse"></span> Available for new projects</div>
+        <div class="status reveal">
+          <span class="pulse"></span>
+          <span data-i18n="en">Available for new projects</span><span data-i18n="es">Disponible para nuevos proyectos</span>
+        </div>
         <h1 class="reveal" style="transition-delay:.08s"><span class="grad">Victor A.<br />Perez M.</span></h1>
         <div class="role reveal" style="transition-delay:.16s"><span id="role"></span><span class="cursor"></span></div>
-        <p class="lede reveal" style="transition-delay:.24s">
+        <p class="lede reveal" data-i18n="en" style="transition-delay:.24s">
           I design and build end-to-end web applications — from the database model to the user
           interface. I specialize in robust systems and clean code, with real production experience
           in both full-stack development and infrastructure / DevOps administration.
         </p>
+        <p class="lede reveal" data-i18n="es" style="transition-delay:.24s">
+          Diseño y construyo aplicaciones web de extremo a extremo — desde el modelo de base de datos
+          hasta la interfaz de usuario. Me especializo en sistemas robustos y código limpio, con
+          experiencia real en producción tanto en desarrollo full-stack como en administración de
+          infraestructura / DevOps.
+        </p>
         <div class="hero-cta reveal" style="transition-delay:.32s">
-          <a href="#projects" class="btn btn-primary">View projects
+          <a href="#projects" class="btn btn-primary">
+            <span data-i18n="en">View projects</span><span data-i18n="es">Ver proyectos</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
-          <a href="/assets/img/CV_Victor_Perez.pdf" download class="btn btn-ghost">Download CV
+          <a href="/assets/docs/CV_Victor_Perez_EN.pdf" download class="btn btn-ghost" data-i18n="en">
+            Download CV
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          </a>
+          <a href="/assets/docs/CV_Victor_Perez_ES.pdf" download class="btn btn-ghost" data-i18n="es">
+            Descargar CV
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
           </a>
         </div>
         <div class="hero-meta reveal" style="transition-delay:.32s">
           <div class="m">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            Panama City, Panama
+            <span data-i18n="en">Panama City, Panama</span><span data-i18n="es">Ciudad de Panamá, Panamá</span>
           </div>
         </div>
       </div>
@@ -48,8 +63,12 @@ const spec = [
             {
               spec.map((row) => (
                 <div class="plate-row">
-                  <span class="plate-label">{row.label}</span>
-                  <span class="plate-value">{row.strong ? <b>{row.value}</b> : row.value}</span>
+                  <span class="plate-label"><span data-i18n="en">{row.en}</span><span data-i18n="es">{row.es}</span></span>
+                  <span class="plate-value">
+                    {row.strong ? <b>{row.value}</b> : (row.valueEs ? <>
+                      <span data-i18n="en">{row.value}</span><span data-i18n="es">{row.valueEs}</span>
+                    </> : row.value)}
+                  </span>
                 </div>
               ))
             }
@@ -62,36 +81,58 @@ const spec = [
 </section>
 
 <script>
-  const roles = [
-    'Full-Stack Software Developer',
-    'Laravel & Vue Specialist',
-    'Infrastructure Administrator',
-    'DevOps',
-  ]
+  const roles: Record<'en' | 'es', string[]> = {
+    en: [
+      'Full-Stack Software Developer',
+      'Laravel & Vue Specialist',
+      'Infrastructure Administrator',
+      'DevOps',
+    ],
+    es: [
+      'Desarrollador Full-Stack',
+      'Especialista Laravel y Vue',
+      'Administrador de Infraestructura',
+      'DevOps',
+    ],
+  }
   const el = document.getElementById('role')
   let wordIndex = 0
   let charIndex = 0
   let deleting = false
+  let current: 'en' | 'es' =
+    document.documentElement.getAttribute('data-lang') === 'es' ? 'es' : 'en'
+  let timer: ReturnType<typeof setTimeout> | undefined
 
   function tick() {
     if (!el) return
-    const word = roles[wordIndex]
+    const word = roles[current][wordIndex]
     el.textContent = word.substring(0, charIndex)
     if (!deleting && charIndex < word.length) {
       charIndex++
-      setTimeout(tick, 70)
+      timer = setTimeout(tick, 70)
     } else if (deleting && charIndex > 0) {
       charIndex--
-      setTimeout(tick, 35)
+      timer = setTimeout(tick, 35)
     } else if (!deleting) {
       deleting = true
-      setTimeout(tick, 1700)
+      timer = setTimeout(tick, 1700)
     } else {
       deleting = false
-      wordIndex = (wordIndex + 1) % roles.length
-      setTimeout(tick, 350)
+      wordIndex = (wordIndex + 1) % roles[current].length
+      timer = setTimeout(tick, 350)
     }
   }
 
   tick()
+
+  // Restart the typewriter (fresh word) when the language toggle fires.
+  window.addEventListener('langchange', (e) => {
+    const detail = (e as CustomEvent<'en' | 'es'>).detail
+    current = detail === 'es' ? 'es' : 'en'
+    wordIndex = 0
+    charIndex = 0
+    deleting = false
+    if (timer) clearTimeout(timer)
+    tick()
+  })
 </script>

@@ -7,6 +7,15 @@ export interface Metric {
   k: string
 }
 
+export interface ProjectEs {
+  tag: string
+  title: string
+  /** May contain inline HTML (e.g. <code>); content is static and trusted. */
+  description: string
+  /** Same order/length as `metrics` — only the caption (`k`) is translated. */
+  metrics: { k: string }[]
+}
+
 export interface Project {
   id: string
   category: ProjectCategory
@@ -21,6 +30,7 @@ export interface Project {
   objectPosition?: string
   metrics: Metric[]
   tags: string[]
+  es: ProjectEs
 }
 
 export const projects: Project[] = [
@@ -38,6 +48,16 @@ export const projects: Project[] = [
       { v: '10,000+', k: 'registered visits' },
     ],
     tags: ['Laravel', 'Bootstrap', 'MySQL', 'Active Directory'],
+    es: {
+      tag: 'Aplicación Web · Intranet',
+      title: 'Portal Interno SNM',
+      description:
+        'Punto de acceso centralizado a más de 20 aplicaciones institucionales: búsqueda filtrable, correo directo, contador de visitas en tiempo real y alertas de seguridad emergentes (campaña Anti-Phishing "Plan Firmeza").',
+      metrics: [
+        { k: 'aplicaciones integradas' },
+        { k: 'visitas registradas' },
+      ],
+    },
   },
   {
     id: 'apolo-login',
@@ -53,6 +73,16 @@ export const projects: Project[] = [
       { v: 'AD', k: 'LDAP integration' },
     ],
     tags: ['Laravel', 'LDAP / AD', 'Sessions', 'Security'],
+    es: {
+      tag: 'Autenticación · Active Directory',
+      title: 'APOLO — Inicio de sesión',
+      description:
+        'Pantalla de acceso al sistema institucional con autenticación contra Active Directory (dominio <code>migracion.gob.pa</code>), soporte para usuarios externos con credenciales independientes, y validación dinámica por perfil.',
+      metrics: [
+        { k: 'acceso adaptativo' },
+        { k: 'integración LDAP' },
+      ],
+    },
   },
   {
     id: 'copiado',
@@ -68,6 +98,16 @@ export const projects: Project[] = [
       { v: 'PDF', k: 'order reports' },
     ],
     tags: ['Laravel', 'JavaScript', 'MySQL', 'PDF Reports'],
+    es: {
+      tag: 'Módulo APOLO · Punto de Venta',
+      title: 'Centro de Copiado',
+      description:
+        'Digitalización del Centro de Copiado institucional con un POS interno: carrito con cotización automática, cierre de turno, catálogo de servicios, estadísticas por día/semana/mes y monitoreo en tiempo real de operadores activos.',
+      metrics: [
+        { k: 'cotización en vivo' },
+        { k: 'reportes de pedidos' },
+      ],
+    },
   },
   {
     id: 'transporte',
@@ -83,6 +123,16 @@ export const projects: Project[] = [
       { v: 'Dashboard', k: 'fleet statistics' },
     ],
     tags: ['Laravel', 'Eloquent', 'MySQL', 'Uploads'],
+    es: {
+      tag: 'Módulo APOLO · Gestión de Flota',
+      title: 'Control de Transporte',
+      description:
+        'Seguimiento de la flota vehicular institucional: registro con ficha técnica, catálogo de accesorios, historial de inspección de 20 puntos con archivos adjuntos, y generación de reportes de flota en PDF.',
+      metrics: [
+        { k: 'puntos de inspección' },
+        { k: 'estadísticas de flota' },
+      ],
+    },
   },
   {
     id: 'cambio',
@@ -99,6 +149,16 @@ export const projects: Project[] = [
       { v: 'Auto', k: 'email notification' },
     ],
     tags: ['Laravel', 'Mail', 'Workflow', 'MySQL'],
+    es: {
+      tag: 'Módulo APOLO · Gestión de Cambios',
+      title: 'Solicitud de Cambios',
+      description:
+        'Gestión de cambios para la DTI: clasificación por tipo (Estándar / Emergencia) con ajuste automático de prioridad, sección de impacto técnico, flujo de aprobación multinivel (Revisión DTI → Gerencia) y notificación por correo.',
+      metrics: [
+        { k: 'flujo de aprobación' },
+        { k: 'notificación automática' },
+      ],
+    },
   },
   {
     id: 'estadisticas',
@@ -114,6 +174,16 @@ export const projects: Project[] = [
       { v: 'Real-time', k: 'live KPIs' },
     ],
     tags: ['Laravel', 'JavaScript', 'Charts', 'MySQL'],
+    es: {
+      tag: 'Analítica · Tráfico',
+      title: 'Estadísticas del Portal',
+      description:
+        'Panel administrativo de visitas: KPIs en tiempo real (día/semana/mes), IPs únicas por periodo, gráfico de últimos 30 días, e historial detallado de accesos con IP, navegador/SO y fecha/hora.',
+      metrics: [
+        { k: 'serie histórica' },
+        { k: 'KPIs en vivo' },
+      ],
+    },
   },
   {
     id: 'dashboard',
@@ -130,6 +200,16 @@ export const projects: Project[] = [
       { v: 'Map', k: 'interactive choropleth' },
     ],
     tags: ['Laravel', 'Highcharts', 'GeoJSON', 'MySQL'],
+    es: {
+      tag: 'Analítica · Highcharts + Mapa',
+      title: 'Dashboard de Operaciones',
+      description:
+        'Panel analítico en tiempo real para operaciones de campo: KPIs por género, serie temporal de acciones, mapa coroplético interactivo de Panamá por provincia, y desglose por nacionalidad con Highcharts.',
+      metrics: [
+        { k: 'registros analizados' },
+        { k: 'mapa coroplético interactivo' },
+      ],
+    },
   },
   {
     id: 'rbac',
@@ -145,6 +225,16 @@ export const projects: Project[] = [
       { v: '40+', k: 'institutional roles' },
     ],
     tags: ['Laravel', 'RBAC', 'Middleware', 'MySQL'],
+    es: {
+      tag: 'Seguridad · Control de Acceso (RBAC)',
+      title: 'Módulos, Roles y Permisos',
+      description:
+        'Sistema de control de acceso granular que gobierna toda la plataforma APOLO: estructura de módulos, roles por función institucional, permisos CRUD por módulo, y catálogo de departamentos del SNM.',
+      metrics: [
+        { k: 'permisos granulares' },
+        { k: 'roles institucionales' },
+      ],
+    },
   },
   {
     id: 'reclutamiento',
@@ -161,6 +251,16 @@ export const projects: Project[] = [
       { v: 'Docs', k: 'document control' },
     ],
     tags: ['Laravel', 'MySQL', 'Blade', 'JavaScript'],
+    es: {
+      tag: 'Módulo APOLO · Reclutamiento',
+      title: 'Reclutamiento — Academia SNM',
+      description:
+        'Sistema de gestión de aspirantes a la Academia del Servicio Nacional de Migración: registro de candidatos, control documental, seguimiento del proceso de selección, y panel administrativo para evaluadores.',
+      metrics: [
+        { k: 'proceso de selección' },
+        { k: 'control documental' },
+      ],
+    },
   },
   {
     id: 'noticias',
@@ -173,5 +273,12 @@ export const projects: Project[] = [
       'Institutional communication within APOLO: public grid view with featured image and "Read more", personalized welcome per user, and admin panel with CRUD, status control (Published / Draft), and search.',
     metrics: [{ v: 'CRUD', k: 'editorial panel' }],
     tags: ['Laravel', 'Blade', 'JavaScript', 'MySQL'],
+    es: {
+      tag: 'Módulo APOLO · CMS Institucional',
+      title: 'Gestión de Noticias',
+      description:
+        'Comunicación institucional dentro de APOLO: vista pública en cuadrícula con imagen destacada y "Leer más", bienvenida personalizada por usuario, y panel de administración con CRUD, control de estado (Publicado / Borrador) y búsqueda.',
+      metrics: [{ k: 'panel editorial' }],
+    },
   },
 ]

@@ -13,7 +13,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="dark" data-lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -30,11 +30,16 @@ const {
       rel="stylesheet"
     />
 
-    <!-- Apply persisted theme before paint to avoid a flash -->
+    <!-- Apply persisted theme + language before paint to avoid a flash -->
     <script is:inline>
       try {
         const t = localStorage.getItem('theme')
         if (t) document.documentElement.setAttribute('data-theme', t)
+        const l = localStorage.getItem('lang')
+        if (l === 'es' || l === 'en') {
+          document.documentElement.setAttribute('data-lang', l)
+          document.documentElement.setAttribute('lang', l)
+        }
       } catch (e) {}
     </script>
   </head>
