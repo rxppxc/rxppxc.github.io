@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { projects, type Project, type ProjectCategory } from '../data/projects'
+import { projects, type ProjectCategory } from '../data/projects'
 import { useLang } from '../composables/useLang'
 import ProjectCard from './ProjectCard.vue'
 
@@ -12,7 +12,6 @@ const filters: { label: string; labelEs: string; value: FilterValue }[] = [
   { label: 'Dashboards & Analytics', labelEs: 'Paneles y Analítica', value: 'data' },
   { label: 'System Modules', labelEs: 'Módulos de Sistema', value: 'modulo' },
   { label: 'Security & Access', labelEs: 'Seguridad y Acceso', value: 'auth' },
-  { label: 'Academic & Team', labelEs: 'Académico y Equipo', value: 'academic' },
 ]
 
 const active = ref<FilterValue>('all')
@@ -22,9 +21,10 @@ const visible = computed(() =>
   active.value === 'all' ? projects : projects.filter((p) => p.category === active.value),
 )
 
-// Narrative grouping shown only in the "All" view — turns the flat list into
-// a progression (foundation → modules → analytics), with academic/team work
-// kept visually separate from institutional SNM projects.
+// Light narrative grouping shown only in the "All" view — same flat grid,
+// just labeled in 3 short bands (foundation → modules → analytics) instead
+// of one undifferentiated list. Kept compact on purpose: it's a hint, not a
+// full section break.
 interface Group {
   key: string
   label: string
@@ -42,7 +42,6 @@ const professionalGroups = computed(() =>
     (g) => g.items.length > 0,
   ),
 )
-const academicItems = computed<Project[]>(() => projects.filter((p) => p.category === 'academic'))
 </script>
 
 <template>
@@ -75,56 +74,32 @@ const academicItems = computed<Project[]>(() => projects.filter((p) => p.categor
         </button>
       </div>
 
-      <!-- "All": grouped into a narrative progression, professional work first -->
-      <template v-if="active === 'all'">
-        <div class="block-divider">
-          <span class="eyebrow">{{ lang === 'es' ? 'Experiencia profesional' : 'Professional experience' }}</span>
-          <p class="block-divider-note" v-if="lang === 'es'">
-            Sistemas desarrollados durante mi paso por el
-            <strong>Servicio Nacional de Migración de Panamá</strong> · Dirección de Tecnología e
-            Innovación (DTI)
-          </p>
-          <p class="block-divider-note" v-else>
-            Systems developed during my tenure at the
-            <strong>National Migration Service of Panama</strong> · Directorate of Technology and
-            Innovation (DTI)
-          </p>
-        </div>
+      <div class="block-divider">
+        <span class="eyebrow">{{ lang === 'es' ? 'Experiencia profesional' : 'Professional experience' }}</span>
+        <p class="block-divider-note" v-if="lang === 'es'">
+          Sistemas desarrollados durante mi paso por el
+          <strong>Servicio Nacional de Migración de Panamá</strong> · Dirección de Tecnología e
+          Innovación (DTI)
+        </p>
+        <p class="block-divider-note" v-else>
+          Systems developed during my tenure at the
+          <strong>National Migration Service of Panama</strong> · Directorate of Technology and
+          Innovation (DTI)
+        </p>
+      </div>
 
+      <!-- "All": same grid, just labeled in compact bands -->
+      <template v-if="active === 'all'">
         <div v-for="g in professionalGroups" :key="g.key" class="project-group">
           <span class="eyebrow group-eyebrow">{{ lang === 'es' ? g.labelEs : g.label }}</span>
           <TransitionGroup name="card" tag="div" class="projects">
             <ProjectCard v-for="p in g.items" :key="p.id" :project="p" :lang="lang" />
           </TransitionGroup>
         </div>
-
-        <template v-if="academicItems.length > 0">
-          <div class="block-divider">
-            <span class="eyebrow">{{ lang === 'es' ? 'Proyectos académicos y de equipo' : 'Academic & team projects' }}</span>
-            <p class="block-divider-note" v-if="lang === 'es'">
-              Trabajo de equipo universitario — separado del trabajo institucional, con la autoría
-              de cada aporte aclarada en cada tarjeta.
-            </p>
-            <p class="block-divider-note" v-else>
-              University team work — kept separate from institutional work, with each card
-              clarifying my specific contribution.
-            </p>
-          </div>
-          <TransitionGroup name="card" tag="div" class="projects">
-            <ProjectCard v-for="p in academicItems" :key="p.id" :project="p" :lang="lang" />
-          </TransitionGroup>
-        </template>
       </template>
 
       <!-- Specific filter: flat grid of that one category -->
       <template v-else>
-        <div class="block-divider">
-          <span class="eyebrow">
-            {{ active === 'academic'
-              ? (lang === 'es' ? 'Proyectos académicos y de equipo' : 'Academic & team projects')
-              : (lang === 'es' ? 'Experiencia profesional' : 'Professional experience') }}
-          </span>
-        </div>
         <TransitionGroup name="card" tag="div" class="projects" id="grid">
           <ProjectCard v-for="p in visible" :key="p.id" :project="p" :lang="lang" />
         </TransitionGroup>
