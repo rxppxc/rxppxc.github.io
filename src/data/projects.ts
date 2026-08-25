@@ -1,4 +1,4 @@
-export type ProjectCategory = 'web' | 'data' | 'modulo' | 'auth'
+export type ProjectCategory = 'web' | 'data' | 'modulo' | 'auth' | 'academic'
 
 export interface Metric {
   /** Headline value, e.g. "20+" */
@@ -279,6 +279,31 @@ export const projects: Project[] = [
       description:
         'Comunicación institucional dentro de APOLO: vista pública en cuadrícula con imagen destacada y "Leer más", bienvenida personalizada por usuario, y panel de administración con CRUD, control de estado (Publicado / Borrador) y búsqueda.',
       metrics: [{ k: 'panel editorial' }],
+    },
+  },
+  {
+    id: 'proyecto-final',
+    category: 'academic',
+    img: '/assets/img/proyecto-final-architecture.svg',
+    alt: 'Clean Architecture diagram of the Marketplace project',
+    tag: 'Team Project · Domain & Use Cases',
+    title: 'Tech Marketplace',
+    description:
+      'Group project (3 students, University of Panama) for a tech-product marketplace: REST API and Django frontend over MySQL, run with Docker Compose. <strong>My scope: Domain layer, Use Cases, and SQL</strong> — the API\'s presentation/infra layers and the Django frontend were built by teammates.',
+    metrics: [
+      { v: 'Clean Arch.', k: 'domain-driven layers' },
+      { v: '3', k: 'team members' },
+    ],
+    tags: ['Node.js', 'TypeScript', 'Express', 'Django', 'MySQL', 'Docker'],
+    es: {
+      tag: 'Proyecto en Equipo · Domain & Use Cases',
+      title: 'Marketplace de Tecnología',
+      description:
+        'Proyecto grupal (3 estudiantes, Universidad de Panamá) para un marketplace de productos tech: API REST y frontend en Django sobre MySQL, orquestado con Docker Compose. <strong>Mi alcance: capa de Domain, Use Cases y SQL</strong> — las capas de presentación/infra de la API y el frontend en Django los construyeron mis compañeros.',
+      metrics: [
+        { k: 'capas domain-driven' },
+        { k: 'integrantes del equipo' },
+      ],
     },
   },
 ]

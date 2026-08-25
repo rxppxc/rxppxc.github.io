@@ -1,0 +1,73 @@
+---
+// Standalone highlight for the most recent project — kept separate from the
+// APOLO/SNM grid in Projects.vue on purpose (see portfolio restructure plan).
+const repoUrl = 'https://github.com/rxppxc/filedrop-integracion-llm-ollama'
+---
+
+<section class="block" id="featured">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow" data-i18n="en">Latest work</span>
+        <span class="eyebrow" data-i18n="es">Trabajo reciente</span>
+        <h2 class="section-title" style="margin-top:.6rem; font-size:clamp(1.8rem,4vw,2.6rem);">FileDrop-SNM + MIA</h2>
+
+        <p data-i18n="en" style="color:var(--muted); font-size:1.05rem; margin-top:1.2rem; max-width:52ch;">
+          A file-transfer platform for Panama's National Migration Service, now with a local AI
+          assistant. <strong>MIA</strong> (Motor Integrado de Asistencia) runs entirely on Ollama —
+          no user query ever leaves the government network — and it can't approve, download, or
+          delete anything: it only explains, by design.
+        </p>
+        <p data-i18n="es" style="color:var(--muted); font-size:1.05rem; margin-top:1.2rem; max-width:52ch;">
+          Una plataforma de transferencia de archivos para el Servicio Nacional de Migración de
+          Panamá, ahora con un asistente de IA local. <strong>MIA</strong> (Motor Integrado de
+          Asistencia) corre enteramente sobre Ollama — ninguna consulta sale de la red del
+          organismo — y no puede aprobar, descargar ni eliminar nada: solo explica, por diseño.
+        </p>
+
+        <div class="chips" style="margin:1.4rem 0;">
+          <span class="chip">LLM / NLP</span>
+          <span class="chip">Prompt Engineering</span>
+          <span class="chip" data-i18n="en">RPA · Audit logging</span>
+          <span class="chip" data-i18n="es">RPA · Auditoría</span>
+          <span class="chip">FastAPI</span>
+          <span class="chip">React</span>
+        </div>
+
+        <div class="metrics" style="max-width:360px;">
+          <div class="metric">
+            <div class="v">100% local</div>
+            <div class="k" data-i18n="en">no cloud LLM calls</div>
+            <div class="k" data-i18n="es">sin LLM en la nube</div>
+          </div>
+          <div class="metric">
+            <div class="v" data-i18n="en">Zero</div>
+            <div class="v" data-i18n="es">Cero</div>
+            <div class="k" data-i18n="en">function-calling, by design</div>
+            <div class="k" data-i18n="es">function-calling, por diseño</div>
+          </div>
+        </div>
+
+        <a href={repoUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top:.6rem;">
+          <span data-i18n="en">View the write-up on GitHub</span>
+          <span data-i18n="es">Ver el repositorio en GitHub</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+
+      <div>
+        <div class="preview" style="border-radius:var(--radius); border:1px solid var(--line);">
+          <div class="frame">
+            <div class="frame-bar"><span></span><span></span><span></span><div class="url"></div></div>
+            <img
+              class="shot"
+              src="/assets/img/filedrop-mia-placeholder.svg"
+              alt="FileDrop-SNM + MIA — screenshot pending"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

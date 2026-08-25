@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Clean Architecture diagram">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#141418"/>
+      <stop offset="100%" stop-color="#0a0a0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg2)"/>
+
+  <text x="60" y="70" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="3" fill="#5c5d64">CLEAN ARCHITECTURE</text>
+
+  <!-- concentric rings, outer = teammates' layers (dim), inner = Victor's scope (bright) -->
+  <g transform="translate(480,390)">
+    <circle r="270" fill="none" stroke="#2a2a2f" stroke-width="2"/>
+    <circle r="200" fill="none" stroke="#3a3b40" stroke-width="2"/>
+    <circle r="130" fill="none" stroke="#8b9099" stroke-width="2.5"/>
+    <circle r="62" fill="#1b1b20" stroke="#c8ccd2" stroke-width="3"/>
+
+    <text y="-235" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#5c5d64">Presentation (Django)</text>
+    <text y="-165" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#5c5d64">Infrastructure</text>
+    <text y="-98" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#c8ccd2">Use Cases</text>
+    <text y="6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#f2f2ef">Domain</text>
+  </g>
+
+  <!-- legend -->
+  <g transform="translate(880,300)" font-family="Arial, Helvetica, sans-serif">
+    <rect x="0" y="0" width="14" height="14" rx="3" fill="#1b1b20" stroke="#c8ccd2" stroke-width="2"/>
+    <text x="24" y="12" font-size="15" fill="#c8ccd2" font-weight="700">Victor's scope</text>
+    <text x="0" y="38" font-size="13" fill="#9a9ba1">Domain + Use Cases + SQL</text>
+
+    <rect x="0" y="70" width="14" height="14" rx="3" fill="none" stroke="#3a3b40" stroke-width="2"/>
+    <text x="24" y="82" font-size="15" fill="#9a9ba1">Team scope</text>
+    <text x="0" y="108" font-size="13" fill="#5c5d64">Presentation + Infra (teammates)</text>
+  </g>
+
+  <text x="600" y="700" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="2" fill="#5c5d64">TEAM PROJECT · UNIVERSITY OF PANAMA</text>
+</svg>

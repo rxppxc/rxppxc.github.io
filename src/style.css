@@ -132,6 +132,11 @@ html[data-theme="light"] {
   .block-divider-note { color: var(--muted); font-size: .9rem; margin: 0; }
   .block-divider-note strong { color: var(--text); }
 
+  /* Narrative clusters inside the "All" projects view (see Projects.vue) */
+  .project-group { margin-bottom: 2.6rem; }
+  .project-group:last-of-type { margin-bottom: 0; }
+  .group-eyebrow { display: flex; margin-bottom: 1.1rem; }
+
   /* Scroll progress */
   .progress { position: fixed; top: 0; left: 0; height: 2px; width: 0; background: var(--steel); z-index: 200; box-shadow: 0 0 10px rgba(200, 204, 210, .4); }
 
